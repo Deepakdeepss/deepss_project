@@ -1,17 +1,19 @@
 version: 0.2
 
 phases:
-    install:
-        commands:
-            - echo Installing NGINX
-            - sudo yum update -y
-            - sudo yum install nginx -y
-    build:
-        commands:
-            - echo Build started on 'date'
-    post_build:
-        commands:
-            - echo Configuring NGINX
+  install:
+    commands:
+      - echo Installing NGINX
+      - sudo yum update -y
+      - sudo yum install nginx -y
+  build:
+    commands:
+      - echo Build started on $(date)
+  post_build:
+    commands:
+      - echo Configuring NGINX
+
 artifacts:
-    files:
-        - '**/*'
+  files:
+    - '**/*'
+
